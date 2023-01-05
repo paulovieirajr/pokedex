@@ -1,0 +1,119 @@
+@import "../../../config-scss/rem-calc.scss";
+
+$padding: rem-calc(20);
+
+// Host means the component itself
+:host {
+  width: 100%;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .pokemon {
+      position: relative;
+      display: flex;
+      background: var(--white-color);
+
+      width: calc(49% - 2.5rem);
+      height: rem-calc(157 - 40);
+      padding: $padding;
+
+      margin-bottom: rem-calc(10);
+      padding: $padding;
+
+      border-radius: rem-calc(10);
+
+      text-decoration: none;
+      color: var(--primary-color);
+
+      &__status {
+        h2 {
+          font-size: rem-calc(22);
+          font-style: italic;
+          font-weight: 700;
+          text-transform: capitalize;
+
+          margin-bottom: rem-calc(10);
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+
+          li {
+            background: var(--grey-color);
+            font-size: rem-calc(10);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: rem-calc(50);
+
+            width: rem-calc(60);
+            margin-bottom: rem-calc(5);
+          }
+        }
+      }
+
+      &__image {
+        position: absolute;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: rem-calc(90);
+        width: rem-calc(110);
+
+        right: $padding;
+        bottom: $padding;
+
+        background: url("../../../assets/bg/bg-pokemon-list.svg") no-repeat;
+
+        img {
+          width: rem-calc(60);
+        }
+      }
+    }
+  }
+
+  .my-pagination {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+
+    width: 100%;
+    text-align: center;
+
+    ::ng-deep .ngx-pagination {
+      padding-top: rem-calc(15);
+      font-size: rem-calc(18);
+      font-weight: 700;
+
+      li,
+      a {
+        border-radius: rem-calc(50);
+      }
+
+      li, a {
+        color: var(--white-color);
+      }
+
+      a:hover {
+        background-color: var(--primary-color);
+      }
+
+      .disabled {
+        color: var(--disabled-color);
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    a {
+      width: 100% !important;
+    }
+  }
+}
