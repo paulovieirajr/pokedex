@@ -1,0 +1,5 @@
+@function rem-calc($size) {
+  $base-font-size: 16;
+  $value: calc($size / $base-font-size);
+  @return $value + rem;
+}
